@@ -1,22 +1,50 @@
 package lotto;
 
+import static lotto.Constant.*;
+
 import java.util.ArrayList;
+import java.util.TreeSet;
 
-public class LottoTicket {
-	private ArrayList<LottoBall> lottoTicket;
+public class LottoTicket{
+	private TreeSet<LottoBall> lottoTicket;
 
-	private LottoTicket(ArrayList<LottoBall> lottoTicket) {
+	public TreeSet<LottoBall> getLottoTicket() {
+		return lottoTicket;
+	}
+
+	private static TreeSet<LottoBall> temp = new TreeSet<>();
+
+	private LottoTicket(TreeSet<LottoBall> lottoTicket) {
 		this.lottoTicket = lottoTicket;
 	}
 
-	// public static LottoTicket makeLottoTicketByManual(ArrayList<String> lottoBalls) {
-	// 	// 1. 입력값이 6개로 나눠지는가를 확인한다.
-	// 	// 2. String을 모두 Ball로 만든다. -> Ball로 안만들어지면 예외를 낸다.
-	// 	// 3. 하나씩 로또 티켓에 넣는다. 근데 중복이면 예외를 낸다.
-	// 	// 4. 만들어진 값이 6개인가 체크하고 결과를 만든다.
-	//
-	// 	return null;
-	// }
+	public static LottoTicket makeLottoTicketByManual(ArrayList<String> inputNumbers) {
+		checkParameterCntIsCorrect(inputNumbers);
+		checkParametersAreNumber(inputNumbers);
+		checkParameterMakeLottoBall(inputNumbers);
+		return new LottoTicket(temp);
+	}
+
+	private static void checkParameterMakeLottoBall(ArrayList<String> inputNumbers) {
+		inputNumbers.stream().forEach(number -> temp.add(LottoBall.of(Integer.parseInt(number))));
+		if (temp.size() != 6) {
+			throw new IllegalArgumentException("티켓에 중복되지 않는 6자리 숫자를 입력해주세요.");
+		}
+	}
+
+	private static void checkParametersAreNumber(ArrayList<String> inputNumbers) {
+		inputNumbers.stream().forEach(inputNumber -> {
+			if (!inputNumber.matches(NUMBER_REGEX)) {
+				throw new IllegalArgumentException("티켓에 6개의 숫자를 입력해주세요.");
+			}
+		});
+	}
+
+	private static void checkParameterCntIsCorrect(ArrayList<String> inputNumbers) {
+		if (inputNumbers.size() != 6) {
+			throw new IllegalArgumentException("티켓에 6개의 숫자를 입력해주세요.");
+		}
+	}
 
 	//자동 방식으로 생성
 }

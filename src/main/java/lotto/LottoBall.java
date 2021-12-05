@@ -5,7 +5,7 @@ import static lotto.Constant.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LottoBall {
+public class LottoBall implements Comparable{
 	private static Map<Integer, LottoBall> lottoBallCache = new HashMap<>();
 
 	static {
@@ -14,7 +14,11 @@ public class LottoBall {
 		}
 	}
 
-	private int ballNum;
+	public int getBallNum() {
+		return ballNum;
+	}
+
+	public int ballNum;
 
 	private LottoBall(int ballNum) {
 		this.ballNum = ballNum;
@@ -27,4 +31,9 @@ public class LottoBall {
 		return lottoBallCache.get(ballNum);
 	}
 
+	@Override
+	public int compareTo(Object o) {
+		LottoBall ball = (LottoBall)o;
+		return this.ballNum - ball.getBallNum();
+	}
 }

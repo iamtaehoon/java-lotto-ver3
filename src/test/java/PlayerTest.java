@@ -8,7 +8,6 @@ import lotto.Player;
 
 class PlayerTest {
 	//메서드명_테스트상태_기대행위
-
 	@ParameterizedTest
 	@ValueSource(strings = {"1000","2000","10000","30000"})
 	void 입력금액이_로또_1장_30장_사이일때_true(String input) {
@@ -39,6 +38,14 @@ class PlayerTest {
 		Player player = new Player();
 		int allTicketCnt = player.inputMoney(input);
 		assertThat(allTicketCnt).isEqualTo(LIMIT_TICKET_CNT);
+	}
 
+	@ParameterizedTest
+	@ValueSource(strings = {"0","1","10","30"})
+	void 수동_티켓_개수_입력이_정상(String input) {
+		Player player = new Player();
+		int allTicketCnt = player.inputMoney("30000");
+		int manualTicketCnt = player.inputManualTicketCnt(input);
+		assertThat(manualTicketCnt <= allTicketCnt).isTrue();
 	}
 }

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 import java.util.TreeSet;
+import java.util.stream.Stream;
 
 public class LottoTicket{
 	private TreeSet<LottoBall> lottoTicket;
@@ -66,5 +67,17 @@ public class LottoTicket{
 		sb.append("]");
 		return sb.toString();
 
+	}
+
+	public int matchNumberCnt(ArrayList<Integer> winningNumber) {
+		int cnt = 0;
+		for (LottoBall lottoBall : lottoTicket) {
+			cnt += (int) winningNumber.stream().filter(num -> LottoBall.of(num).equals(lottoBall)).count();
+		}
+		return cnt;
+	}
+
+	public boolean isMatchBonusBall(int bonusBallNum) {
+		return lottoTicket.contains(LottoBall.of(bonusBallNum));
 	}
 }

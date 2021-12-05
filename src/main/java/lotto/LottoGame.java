@@ -10,5 +10,7 @@ public class LottoGame {
 		player.giveTickets(machine);
 		machine.makeAutoTickets(totalTicketCnt - manualTicketCnt);
 		machine.showAllTickets();
+		machine.inputWinningNumAndBonusBall();
+		machine.getResult();
 	}
 }

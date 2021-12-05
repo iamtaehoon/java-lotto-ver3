@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">4</div>
+<div class="counter">29</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.063s</div>
+<div class="counter">0.105s</div>
 <p>duration</p>
 </div>
 </td>
@@ -76,9 +76,33 @@
 </tr>
 </thead>
 <tr>
+<td class="success">[1] -1</td>
+<td class="success">수동_티켓_개수_입력이_음수(String)[1]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[2] -2</td>
+<td class="success">수동_티켓_개수_입력이_음수(String)[2]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[3] -10</td>
+<td class="success">수동_티켓_개수_입력이_음수(String)[3]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[4] -30</td>
+<td class="success">수동_티켓_개수_입력이_음수(String)[4]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">[1] 0</td>
 <td class="success">수동_티켓_개수_입력이_정상(String)[1]</td>
-<td class="success">0.061s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -90,12 +114,138 @@
 <tr>
 <td class="success">[3] 10</td>
 <td class="success">수동_티켓_개수_입력이_정상(String)[3]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[4] 30</td>
 <td class="success">수동_티켓_개수_입력이_정상(String)[4]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[1] 1000</td>
+<td class="success">입력금액이_로또_1장_30장_사이일때_true(String)[1]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[2] 2000</td>
+<td class="success">입력금액이_로또_1장_30장_사이일때_true(String)[2]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[3] 10000</td>
+<td class="success">입력금액이_로또_1장_30장_사이일때_true(String)[3]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[4] 30000</td>
+<td class="success">입력금액이_로또_1장_30장_사이일때_true(String)[4]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[1] ㅃㅂ</td>
+<td class="success">입력금액이_숫자가_아닐때_false(String)[1]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[2] sq</td>
+<td class="success">입력금액이_숫자가_아닐때_false(String)[2]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[3] dq1</td>
+<td class="success">입력금액이_숫자가_아닐때_false(String)[3]</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[4] 123d</td>
+<td class="success">입력금액이_숫자가_아닐때_false(String)[4]</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[5] [[]</td>
+<td class="success">입력금액이_숫자가_아닐때_false(String)[5]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[6] -</td>
+<td class="success">입력금액이_숫자가_아닐때_false(String)[6]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[1] 30001</td>
+<td class="success">입력금액이_티켓개수_제한_넘어갈때(String)[1]</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[2] 40000</td>
+<td class="success">입력금액이_티켓개수_제한_넘어갈때(String)[2]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[3] 100000</td>
+<td class="success">입력금액이_티켓개수_제한_넘어갈때(String)[3]</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[4] 2131333</td>
+<td class="success">입력금액이_티켓개수_제한_넘어갈때(String)[4]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[1] 999</td>
+<td class="success">입력금액이_티켓금액보다_작을때_false(String)[1]</td>
+<td class="success">0.077s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[2] 500</td>
+<td class="success">입력금액이_티켓금액보다_작을때_false(String)[2]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[3] 1</td>
+<td class="success">입력금액이_티켓금액보다_작을때_false(String)[3]</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[4] 0</td>
+<td class="success">입력금액이_티켓금액보다_작을때_false(String)[4]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[5] -1</td>
+<td class="success">입력금액이_티켓금액보다_작을때_false(String)[5]</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[6] -100</td>
+<td class="success">입력금액이_티켓금액보다_작을때_false(String)[6]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[7] -10000</td>
+<td class="success">입력금액이_티켓금액보다_작을때_false(String)[7]</td>
 <td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
@@ -109,7 +259,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 4.10.3</a> at 2021. 12. 5 오후 2:36:43</p>
+<a href="http://www.gradle.org">Gradle 4.10.3</a> at 2021. 12. 5 오후 2:39:39</p>
 </div>
 </div>
 </body>

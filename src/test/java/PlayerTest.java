@@ -48,4 +48,13 @@ class PlayerTest {
 		int manualTicketCnt = player.inputManualTicketCnt(input);
 		assertThat(manualTicketCnt <= allTicketCnt).isTrue();
 	}
+
+	@ParameterizedTest
+	@ValueSource(strings = {"-1","-2","-10","-30"})
+	void 수동_티켓_개수_입력이_음수(String input) {
+		Player player = new Player();
+		int allTicketCnt = player.inputMoney("30000");
+		assertThatThrownBy(() -> player.inputManualTicketCnt(input)).isInstanceOf(IllegalArgumentException.class)
+			.hasMessageContaining("수동으로 구매할 로또의 수는 음수가 될 수 없습니다");
+	}
 }

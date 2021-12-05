@@ -23,4 +23,12 @@ class PlayerTest {
 		assertThatThrownBy(() -> player.inputMoney(input)).isInstanceOf(IllegalArgumentException.class)
 			.hasMessageContaining("입력 금액이 부족합니다.");
 	}
+
+	@ParameterizedTest
+	@ValueSource(strings = {"ㅃㅂ","sq","dq1","123d","[[]","-"})
+	void 입력금액이_숫자가_아닐때_false(String input) {
+		Player player = new Player();
+		assertThatThrownBy(() -> player.inputMoney(input)).isInstanceOf(IllegalArgumentException.class)
+			.hasMessageContaining("입력받은 금액은 숫자가 아닙니다.");
+	}
 }

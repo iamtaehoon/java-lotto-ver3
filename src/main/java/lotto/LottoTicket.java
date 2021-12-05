@@ -3,19 +3,28 @@ package lotto;
 import static lotto.Constant.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 import java.util.TreeSet;
 
 public class LottoTicket{
 	private TreeSet<LottoBall> lottoTicket;
+	private static TreeSet<LottoBall> temp = new TreeSet<>();
 
 	public TreeSet<LottoBall> getLottoTicket() {
 		return lottoTicket;
 	}
 
-	private static TreeSet<LottoBall> temp = new TreeSet<>();
-
 	private LottoTicket(TreeSet<LottoBall> lottoTicket) {
 		this.lottoTicket = lottoTicket;
+	}
+
+	public static LottoTicket makeLottoTicketByAuto() {
+		temp.clear();
+		while (temp.size() != LOTTO_TICKET_NUMBER_CNT) {
+			temp.add(LottoBall.of((int)(Math.random() * MAX_LOTTO_BALL + MIN_LOTTO_BALL)));
+		}
+		return new LottoTicket(temp);
 	}
 
 	public static LottoTicket makeLottoTicketByManual(ArrayList<String> inputNumbers) {
@@ -28,7 +37,7 @@ public class LottoTicket{
 
 	private static void checkParameterMakeLottoBall(ArrayList<String> inputNumbers) {
 		inputNumbers.stream().forEach(number -> temp.add(LottoBall.of(Integer.parseInt(number))));
-		if (temp.size() != 6) {
+		if (temp.size() != LOTTO_TICKET_NUMBER_CNT) {
 			throw new IllegalArgumentException("티켓에 중복되지 않는 6자리 숫자를 입력해주세요.");
 		}
 	}
@@ -42,10 +51,8 @@ public class LottoTicket{
 	}
 
 	private static void checkParameterCntIsCorrect(ArrayList<String> inputNumbers) {
-		if (inputNumbers.size() != 6) {
+		if (inputNumbers.size() != LOTTO_TICKET_NUMBER_CNT) {
 			throw new IllegalArgumentException("티켓에 6개의 숫자를 입력해주세요.");
 		}
 	}
-
-	//자동 방식으로 생성
 }

@@ -1,5 +1,6 @@
 package lotto;
 
+import static lotto.Constant.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
@@ -43,6 +44,15 @@ class LottoTicketTest {
 		Assertions.assertThatThrownBy(() -> LottoTicket.makeLottoTicketByManual(inputNumbers))
 			.isInstanceOf(IllegalArgumentException.class)
 			.hasMessageContaining("티켓에 중복되지 않는 6자리 숫자를 입력해주세요.");
+	}
+
+	@Test
+	void 자동_티켓_생성_정상() {
+		LottoTicket lottoTicket = LottoTicket.makeLottoTicketByAuto();
+		Assertions.assertThat(lottoTicket.getLottoTicket().stream().distinct().count())
+			.isEqualTo(lottoTicket.getLottoTicket().size());
+		Assertions.assertThat(lottoTicket.getLottoTicket().size()).isEqualTo(LOTTO_TICKET_NUMBER_CNT);
+
 	}
 
 }

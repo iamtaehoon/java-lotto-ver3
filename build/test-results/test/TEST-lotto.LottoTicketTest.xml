@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="lotto.LottoTicketTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-12-05T07:19:10" hostname="gimtaehun-ui-MacBookPro.local" time="0.058">
+<testsuite name="lotto.LottoTicketTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-12-05T07:42:22" hostname="gimtaehun-ui-MacBookPro.local" time="0.065">
   <properties/>
-  <testcase name="수동_티켓_생성_로또번호_중복_입력한_경우()" classname="lotto.LottoTicketTest" time="0.048"/>
+  <testcase name="수동_티켓_생성_로또번호_중복_입력한_경우()" classname="lotto.LottoTicketTest" time="0.049"/>
+  <testcase name="자동_티켓_생성_정상()" classname="lotto.LottoTicketTest" time="0.005"/>
   <testcase name="수동_티켓_생성_로또번호_6개_아닌_경우()" classname="lotto.LottoTicketTest" time="0.001"/>
-  <testcase name="수동_티켓_생성_로또번호_범위_벗어난_경우()" classname="lotto.LottoTicketTest" time="0.002"/>
-  <testcase name="수동_방식으로_티켓_생성_정상_로직()" classname="lotto.LottoTicketTest" time="0.006"/>
+  <testcase name="수동_티켓_생성_로또번호_범위_벗어난_경우()" classname="lotto.LottoTicketTest" time="0.001"/>
+  <testcase name="수동_방식으로_티켓_생성_정상_로직()" classname="lotto.LottoTicketTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

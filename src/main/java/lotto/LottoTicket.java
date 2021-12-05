@@ -19,6 +19,7 @@ public class LottoTicket{
 	}
 
 	public static LottoTicket makeLottoTicketByManual(ArrayList<String> inputNumbers) {
+		temp.clear();
 		checkParameterCntIsCorrect(inputNumbers);
 		checkParametersAreNumber(inputNumbers);
 		checkParameterMakeLottoBall(inputNumbers);

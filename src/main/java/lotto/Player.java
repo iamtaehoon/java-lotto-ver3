@@ -2,6 +2,8 @@ package lotto;
 
 import static lotto.Constant.*;
 
+import java.util.ArrayList;
+
 public class Player {
 	private int purchaseMoney;
 	private int purchasedTicketCnt;
@@ -63,4 +65,11 @@ public class Player {
 			throw new IllegalArgumentException("수동으로 구매할 로또의 수는 음수가 될 수 없습니다");
 		}
 	}
+
+// 	public ArrayList<LottoBall> inputNumbersInManualTicket(ArrayList<String> numbers) {
+// 		//numbers를 number로
+// 		//number를 로또볼로
+// 		//로또볼들을 arrayList에 넣고 반환하기.
+// 		//로또 티켓에 들어갈 수 있나 검증하기.
+// 	}
 }

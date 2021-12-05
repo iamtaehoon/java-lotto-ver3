@@ -1,6 +1,10 @@
 import static lotto.Constant.*;
 import static org.assertj.core.api.Assertions.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -66,4 +70,5 @@ class PlayerTest {
 		assertThatThrownBy(() -> player.inputManualTicketCnt(input)).isInstanceOf(IllegalArgumentException.class)
 			.hasMessageContaining("수동으로 구매할 로또의 수는 전체 로또의 수보다 클 수 없습니다.");
 	}
+
 }

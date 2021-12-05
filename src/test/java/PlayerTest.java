@@ -15,4 +15,12 @@ class PlayerTest {
 		int allTicketCnt = player.inputMoney(input);
 		assertThat(allTicketCnt).isEqualTo(Integer.parseInt(input) / 1000);//구입금액
 	}
+
+	@ParameterizedTest
+	@ValueSource(strings = {"999","500","1","0","-1","-100","-10000"})
+	void 입력금액이_티켓금액보다_작을때_false(String input) {
+		Player player = new Player();
+		assertThatThrownBy(() -> player.inputMoney(input)).isInstanceOf(IllegalArgumentException.class)
+			.hasMessageContaining("입력 금액이 부족합니다.");
+	}
 }

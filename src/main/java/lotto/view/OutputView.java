@@ -1,7 +1,11 @@
-package lotto;
+package lotto.view;
 
 
 import java.util.ArrayList;
+
+import lotto.domain.LottoTicket;
+import lotto.domain.Rank;
+import lotto.domain.Result;
 
 public class OutputView {
 

@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import lotto.Player;
+import lotto.domain.Player;
 
 class PlayerTest {
 	//메서드명_테스트상태_기대행위

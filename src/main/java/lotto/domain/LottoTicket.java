@@ -1,12 +1,9 @@
-package lotto;
+package lotto.domain;
 
 import static lotto.Constant.*;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
 import java.util.TreeSet;
-import java.util.stream.Stream;
 
 public class LottoTicket{
 	private TreeSet<LottoBall> lottoTicket;

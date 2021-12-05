@@ -1,8 +1,11 @@
-package lotto;
+package lotto.domain;
 
 import static lotto.Constant.*;
 
 import java.util.ArrayList;
+
+import lotto.view.InputView;
+import lotto.view.OutputView;
 
 public class LottoGame {
 	private Player player = new Player();

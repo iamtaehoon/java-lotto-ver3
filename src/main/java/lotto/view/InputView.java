@@ -1,7 +1,9 @@
-package lotto;
+package lotto.view;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import lotto.StringUtil;
 
 public class InputView {
 	private static Scanner sc = new Scanner(System.in);

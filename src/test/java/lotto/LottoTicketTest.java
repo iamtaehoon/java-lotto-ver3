@@ -1,14 +1,12 @@
 package lotto;
 
-import static lotto.Constant.*;
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.TreeSet;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import lotto.domain.LottoTicket;
 
 class LottoTicketTest {
 

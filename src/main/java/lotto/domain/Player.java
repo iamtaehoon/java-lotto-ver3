@@ -1,8 +1,10 @@
-package lotto;
+package lotto.domain;
 
 import static lotto.Constant.*;
 
 import java.util.ArrayList;
+
+import lotto.view.InputView;
 
 public class Player {
 	private int purchaseMoney;

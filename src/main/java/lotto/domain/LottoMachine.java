@@ -1,9 +1,13 @@
-package lotto;
+package lotto.domain;
 
-import static lotto.LottoTicket.*;
+import static lotto.domain.LottoTicket.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import lotto.StringUtil;
+import lotto.view.InputView;
+import lotto.view.OutputView;
 
 public class LottoMachine {
 	private ArrayList<LottoTicket> allTickets;

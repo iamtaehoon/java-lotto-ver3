@@ -21,6 +21,9 @@ public class LottoBall {
 	}
 
 	public static LottoBall of(int ballNum) {
+		if ((ballNum < MIN_LOTTO_BALL) || (MAX_LOTTO_BALL < ballNum)) {
+			throw new IllegalArgumentException("로또 공은 1~45까지의 숫자만 가능합니다.");
+		}
 		return lottoBallCache.get(ballNum);
 	}
 

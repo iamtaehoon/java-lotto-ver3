@@ -1,3 +1,4 @@
+import static lotto.Constant.*;
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.params.ParameterizedTest;
@@ -13,7 +14,7 @@ class PlayerTest {
 	void 입력금액이_로또_1장_30장_사이일때_true(String input) {
 		Player player = new Player();
 		int allTicketCnt = player.inputMoney(input);
-		assertThat(allTicketCnt).isEqualTo(Integer.parseInt(input) / 1000);//구입금액
+		assertThat(allTicketCnt).isEqualTo(Integer.parseInt(input) / LOTTO_TICKET_COST);//구입금액
 	}
 
 	@ParameterizedTest
@@ -30,5 +31,14 @@ class PlayerTest {
 		Player player = new Player();
 		assertThatThrownBy(() -> player.inputMoney(input)).isInstanceOf(IllegalArgumentException.class)
 			.hasMessageContaining("입력받은 금액은 숫자가 아닙니다.");
+	}
+
+	@ParameterizedTest
+	@ValueSource(strings = {"30001","40000","100000","2131333"})
+	void 입력금액이_티켓개수_제한_넘어갈때(String input) {
+		Player player = new Player();
+		int allTicketCnt = player.inputMoney(input);
+		assertThat(allTicketCnt).isEqualTo(LIMIT_TICKET_CNT);
+
 	}
 }

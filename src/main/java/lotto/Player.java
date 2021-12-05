@@ -3,11 +3,32 @@ package lotto;
 import static lotto.Constant.*;
 
 public class Player {
+	private int purchaseMoney;
+	private int purchasedTicketCnt;
+	
 	public int inputMoney(String input) {
-		int money = validateInputMoney(input);
-		int purchasedTicketCnt = (money / LOTTO_TICKET_COST);
+		purchaseMoney = validateInputMoney(input);
+		purchasedTicketCnt = determinePurchasedTicketCnt();
+
 		return purchasedTicketCnt;
 	}
+
+	private int determinePurchasedTicketCnt() {
+		purchasedTicketCnt = (purchaseMoney / LOTTO_TICKET_COST);
+		if (isLimitPurchasedTicket()) {
+			return LIMIT_TICKET_CNT;
+		}
+		return purchasedTicketCnt;
+	}
+
+	private boolean isLimitPurchasedTicket() {
+		if (purchasedTicketCnt > LIMIT_TICKET_CNT) {
+			purchaseMoney = LIMIT_TICKET_CNT * LOTTO_TICKET_COST;
+			return true;
+		}
+		return false;
+	}
+
 
 	private int validateInputMoney(String input) {
 		int money = validateInputIsNumber(input);

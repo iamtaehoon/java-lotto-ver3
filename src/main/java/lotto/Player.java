@@ -8,6 +8,7 @@ public class Player {
 	private int purchaseMoney;
 	private int purchasedTicketCnt;
 	private int manualTicketCnt;
+	private ArrayList<LottoTicket> tickets = new ArrayList<>();
 	
 	public int inputMoney(String input) {
 		purchaseMoney = validateInputMoney(input);
@@ -64,5 +65,19 @@ public class Player {
 		if (manualTicketCnt < 0) {
 			throw new IllegalArgumentException("수동으로 구매할 로또의 수는 음수가 될 수 없습니다");
 		}
+	}
+
+	public void inputManualTickets() {
+		InputView.inputManualLottoTickets();
+		for (int i = 0; i < manualTicketCnt; i++) {
+			ArrayList<String> inputLottoNumbers = InputView.inputEachManualLottoTicket();
+			LottoTicket lottoTicket = LottoTicket.makeLottoTicketByManual(inputLottoNumbers);
+			tickets.add(lottoTicket);
+		}
+
+	}
+
+	public void giveTickets(LottoMachine machine) {
+		machine.receiveTickets(tickets);
 	}
 }

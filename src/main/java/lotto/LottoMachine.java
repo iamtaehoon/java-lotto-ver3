@@ -26,4 +26,14 @@ public class LottoMachine {
 			}
 		}
 	}
+
+	public void receiveTickets(ArrayList<LottoTicket> tickets) {
+		allTickets = tickets;
+	}
+
+	public void makeAutoTickets(int autoTicketCnt) {
+		for (int i = 0; i < autoTicketCnt; i++) {
+			allTickets.add(makeLottoTicketByAuto());
+		}
+	}
 }

@@ -9,18 +9,13 @@ import java.util.TreeSet;
 
 public class LottoTicket{
 	private TreeSet<LottoBall> lottoTicket;
-	private static TreeSet<LottoBall> temp = new TreeSet<>();
-
-	public TreeSet<LottoBall> getLottoTicket() {
-		return lottoTicket;
-	}
 
 	private LottoTicket(TreeSet<LottoBall> lottoTicket) {
 		this.lottoTicket = lottoTicket;
 	}
 
 	public static LottoTicket makeLottoTicketByAuto() {
-		temp.clear();
+		TreeSet<LottoBall> temp = new TreeSet<>();
 		while (temp.size() != LOTTO_TICKET_NUMBER_CNT) {
 			temp.add(LottoBall.of((int)(Math.random() * MAX_LOTTO_BALL + MIN_LOTTO_BALL)));
 		}
@@ -28,21 +23,23 @@ public class LottoTicket{
 	}
 
 	public static LottoTicket makeLottoTicketByManual(ArrayList<String> inputNumbers) {
-		temp.clear();
-		checkParameterCntIsCorrect(inputNumbers);
-		checkParametersAreNumber(inputNumbers);
-		checkParameterMakeLottoBall(inputNumbers);
+		TreeSet<LottoBall> temp = new TreeSet<>();
+		checkParameterCntIsCorrect(inputNumbers, temp);
+		checkParametersAreNumber(inputNumbers, temp);
+		checkParameterMakeLottoBall(inputNumbers, temp);
 		return new LottoTicket(temp);
 	}
 
-	private static void checkParameterMakeLottoBall(ArrayList<String> inputNumbers) {
+	private static void checkParameterMakeLottoBall(ArrayList<String> inputNumbers,
+		TreeSet<LottoBall> temp) {
 		inputNumbers.stream().forEach(number -> temp.add(LottoBall.of(Integer.parseInt(number))));
 		if (temp.size() != LOTTO_TICKET_NUMBER_CNT) {
 			throw new IllegalArgumentException("티켓에 중복되지 않는 6자리 숫자를 입력해주세요.");
 		}
 	}
 
-	private static void checkParametersAreNumber(ArrayList<String> inputNumbers) {
+	private static void checkParametersAreNumber(ArrayList<String> inputNumbers,
+		TreeSet<LottoBall> temp) {
 		inputNumbers.stream().forEach(inputNumber -> {
 			if (!inputNumber.matches(NUMBER_REGEX)) {
 				throw new IllegalArgumentException("티켓에 6개의 숫자를 입력해주세요.");
@@ -50,7 +47,8 @@ public class LottoTicket{
 		});
 	}
 
-	private static void checkParameterCntIsCorrect(ArrayList<String> inputNumbers) {
+	private static void checkParameterCntIsCorrect(ArrayList<String> inputNumbers,
+		TreeSet<LottoBall> temp) {
 		if (inputNumbers.size() != LOTTO_TICKET_NUMBER_CNT) {
 			throw new IllegalArgumentException("티켓에 6개의 숫자를 입력해주세요.");
 		}

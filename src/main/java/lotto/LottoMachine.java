@@ -1,6 +1,5 @@
 package lotto;
 
-import static lotto.Constant.*;
 import static lotto.LottoTicket.*;
 
 import java.util.ArrayList;

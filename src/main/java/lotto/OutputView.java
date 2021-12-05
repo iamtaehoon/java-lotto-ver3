@@ -1,9 +1,7 @@
 package lotto;
 
-import static lotto.Constant.*;
 
 import java.util.ArrayList;
-import java.util.TreeSet;
 
 public class OutputView {
 

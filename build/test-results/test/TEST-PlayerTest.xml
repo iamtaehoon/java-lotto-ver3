@@ -1,33 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="PlayerTest" tests="29" skipped="0" failures="0" errors="0" timestamp="2021-12-05T05:39:39" hostname="gimtaehun-ui-MacBookPro.local" time="0.163">
+<testsuite name="PlayerTest" tests="35" skipped="0" failures="0" errors="0" timestamp="2021-12-05T05:41:18" hostname="gimtaehun-ui-MacBookPro.local" time="0.172">
   <properties/>
   <testcase name="입력금액이_티켓금액보다_작을때_false(String)[1]" classname="PlayerTest" time="0.077"/>
-  <testcase name="입력금액이_티켓금액보다_작을때_false(String)[2]" classname="PlayerTest" time="0.001"/>
-  <testcase name="입력금액이_티켓금액보다_작을때_false(String)[3]" classname="PlayerTest" time="0.003"/>
-  <testcase name="입력금액이_티켓금액보다_작을때_false(String)[4]" classname="PlayerTest" time="0.001"/>
+  <testcase name="입력금액이_티켓금액보다_작을때_false(String)[2]" classname="PlayerTest" time="0.003"/>
+  <testcase name="입력금액이_티켓금액보다_작을때_false(String)[3]" classname="PlayerTest" time="0.001"/>
+  <testcase name="입력금액이_티켓금액보다_작을때_false(String)[4]" classname="PlayerTest" time="0.0"/>
   <testcase name="입력금액이_티켓금액보다_작을때_false(String)[5]" classname="PlayerTest" time="0.002"/>
-  <testcase name="입력금액이_티켓금액보다_작을때_false(String)[6]" classname="PlayerTest" time="0.001"/>
+  <testcase name="입력금액이_티켓금액보다_작을때_false(String)[6]" classname="PlayerTest" time="0.002"/>
   <testcase name="입력금액이_티켓금액보다_작을때_false(String)[7]" classname="PlayerTest" time="0.001"/>
   <testcase name="입력금액이_숫자가_아닐때_false(String)[1]" classname="PlayerTest" time="0.001"/>
   <testcase name="입력금액이_숫자가_아닐때_false(String)[2]" classname="PlayerTest" time="0.001"/>
-  <testcase name="입력금액이_숫자가_아닐때_false(String)[3]" classname="PlayerTest" time="0.002"/>
-  <testcase name="입력금액이_숫자가_아닐때_false(String)[4]" classname="PlayerTest" time="0.002"/>
+  <testcase name="입력금액이_숫자가_아닐때_false(String)[3]" classname="PlayerTest" time="0.001"/>
+  <testcase name="입력금액이_숫자가_아닐때_false(String)[4]" classname="PlayerTest" time="0.0"/>
   <testcase name="입력금액이_숫자가_아닐때_false(String)[5]" classname="PlayerTest" time="0.0"/>
   <testcase name="입력금액이_숫자가_아닐때_false(String)[6]" classname="PlayerTest" time="0.001"/>
-  <testcase name="입력금액이_티켓개수_제한_넘어갈때(String)[1]" classname="PlayerTest" time="0.002"/>
+  <testcase name="입력금액이_티켓개수_제한_넘어갈때(String)[1]" classname="PlayerTest" time="0.003"/>
   <testcase name="입력금액이_티켓개수_제한_넘어갈때(String)[2]" classname="PlayerTest" time="0.001"/>
-  <testcase name="입력금액이_티켓개수_제한_넘어갈때(String)[3]" classname="PlayerTest" time="0.002"/>
+  <testcase name="입력금액이_티켓개수_제한_넘어갈때(String)[3]" classname="PlayerTest" time="0.001"/>
   <testcase name="입력금액이_티켓개수_제한_넘어갈때(String)[4]" classname="PlayerTest" time="0.0"/>
+  <testcase name="수동_티켓_개수_입력이_전체_티켓_개수보다_많음(String)[1]" classname="PlayerTest" time="0.001"/>
+  <testcase name="수동_티켓_개수_입력이_전체_티켓_개수보다_많음(String)[2]" classname="PlayerTest" time="0.001"/>
+  <testcase name="수동_티켓_개수_입력이_전체_티켓_개수보다_많음(String)[3]" classname="PlayerTest" time="0.001"/>
+  <testcase name="수동_티켓_개수_입력이_전체_티켓_개수보다_많음(String)[4]" classname="PlayerTest" time="0.001"/>
+  <testcase name="수동_티켓_개수_입력이_전체_티켓_개수보다_많음(String)[5]" classname="PlayerTest" time="0.001"/>
+  <testcase name="수동_티켓_개수_입력이_전체_티켓_개수보다_많음(String)[6]" classname="PlayerTest" time="0.0"/>
   <testcase name="입력금액이_로또_1장_30장_사이일때_true(String)[1]" classname="PlayerTest" time="0.001"/>
   <testcase name="입력금액이_로또_1장_30장_사이일때_true(String)[2]" classname="PlayerTest" time="0.001"/>
-  <testcase name="입력금액이_로또_1장_30장_사이일때_true(String)[3]" classname="PlayerTest" time="0.0"/>
+  <testcase name="입력금액이_로또_1장_30장_사이일때_true(String)[3]" classname="PlayerTest" time="0.001"/>
   <testcase name="입력금액이_로또_1장_30장_사이일때_true(String)[4]" classname="PlayerTest" time="0.0"/>
   <testcase name="수동_티켓_개수_입력이_음수(String)[1]" classname="PlayerTest" time="0.001"/>
-  <testcase name="수동_티켓_개수_입력이_음수(String)[2]" classname="PlayerTest" time="0.0"/>
+  <testcase name="수동_티켓_개수_입력이_음수(String)[2]" classname="PlayerTest" time="0.001"/>
   <testcase name="수동_티켓_개수_입력이_음수(String)[3]" classname="PlayerTest" time="0.001"/>
   <testcase name="수동_티켓_개수_입력이_음수(String)[4]" classname="PlayerTest" time="0.001"/>
-  <testcase name="수동_티켓_개수_입력이_정상(String)[1]" classname="PlayerTest" time="0.001"/>
-  <testcase name="수동_티켓_개수_입력이_정상(String)[2]" classname="PlayerTest" time="0.0"/>
+  <testcase name="수동_티켓_개수_입력이_정상(String)[1]" classname="PlayerTest" time="0.002"/>
+  <testcase name="수동_티켓_개수_입력이_정상(String)[2]" classname="PlayerTest" time="0.001"/>
   <testcase name="수동_티켓_개수_입력이_정상(String)[3]" classname="PlayerTest" time="0.0"/>
   <testcase name="수동_티켓_개수_입력이_정상(String)[4]" classname="PlayerTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

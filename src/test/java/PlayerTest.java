@@ -53,8 +53,17 @@ class PlayerTest {
 	@ValueSource(strings = {"-1","-2","-10","-30"})
 	void 수동_티켓_개수_입력이_음수(String input) {
 		Player player = new Player();
-		int allTicketCnt = player.inputMoney("30000");
+		player.inputMoney("30000");
 		assertThatThrownBy(() -> player.inputManualTicketCnt(input)).isInstanceOf(IllegalArgumentException.class)
 			.hasMessageContaining("수동으로 구매할 로또의 수는 음수가 될 수 없습니다");
+	}
+
+	@ParameterizedTest
+	@ValueSource(strings = {"11","12","31","32","40","330"})
+	void 수동_티켓_개수_입력이_전체_티켓_개수보다_많음(String input) {
+		Player player = new Player();
+		player.inputMoney("10000");
+		assertThatThrownBy(() -> player.inputManualTicketCnt(input)).isInstanceOf(IllegalArgumentException.class)
+			.hasMessageContaining("수동으로 구매할 로또의 수는 전체 로또의 수보다 클 수 없습니다.");
 	}
 }

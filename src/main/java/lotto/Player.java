@@ -10,7 +10,7 @@ public class Player {
 	private int manualTicketCnt;
 	private ArrayList<LottoTicket> tickets = new ArrayList<>();
 	
-	public int inputMoney(String input) {
+	public int calculateTotalTicketCnt(String input) {
 		purchaseMoney = validateInputMoney(input);
 		purchasedTicketCnt = determinePurchasedTicketCnt();
 		return purchasedTicketCnt;
@@ -26,7 +26,6 @@ public class Player {
 
 	private boolean isLimitPurchasedTicket() {
 		if (purchasedTicketCnt > LIMIT_TICKET_CNT) {
-			purchaseMoney = LIMIT_TICKET_CNT * LOTTO_TICKET_COST;
 			return true;
 		}
 		return false;
@@ -67,17 +66,12 @@ public class Player {
 		}
 	}
 
-	public void inputManualTickets() {
+	public ArrayList<LottoTicket> inputManualTickets() {
 		InputView.inputManualLottoTickets();
 		for (int i = 0; i < manualTicketCnt; i++) {
 			ArrayList<String> inputLottoNumbers = InputView.inputEachManualLottoTicket();
-			LottoTicket lottoTicket = LottoTicket.makeLottoTicketByManual(inputLottoNumbers);
-			tickets.add(lottoTicket);
+			tickets.add(LottoTicket.makeLottoTicketByManual(inputLottoNumbers));
 		}
-
-	}
-
-	public void giveTickets(LottoMachine machine) {
-		machine.receiveTickets(tickets);
+		return tickets;
 	}
 }

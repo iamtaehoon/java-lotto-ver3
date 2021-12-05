@@ -69,7 +69,7 @@ public class LottoTicket{
 
 	}
 
-	public int matchNumberCnt(ArrayList<Integer> winningNumber) {
+	public int compare(ArrayList<Integer> winningNumber) {
 		int cnt = 0;
 		for (LottoBall lottoBall : lottoTicket) {
 			cnt += (int) winningNumber.stream().filter(num -> LottoBall.of(num).equals(lottoBall)).count();

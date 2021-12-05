@@ -35,6 +35,6 @@ public class InputView {
 	}
 
 	public static ArrayList<String> inputEachManualLottoTicket() {
-		return StringUtil.makeTicket(getInput());
+		return StringUtil.splitUsingComma(getInput());
 	}
 }

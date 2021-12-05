@@ -8,30 +8,44 @@ import java.util.Arrays;
 
 public class LottoMachine {
 	private ArrayList<LottoTicket> allTickets;
-	private ArrayList<String> winningTicket;
-	private String bonusBall;
-	private int answer;
+	private ArrayList<Integer> winningTicket;
+	private int bonusBall;
 	private ArrayList<Result> results = new ArrayList<>(
 		Arrays.asList(new Result(Rank.LOSE), new Result(Rank.FIFTH), new Result(Rank.FOURTH), new Result(Rank.THIRD),
 			new Result(Rank.SECOND), new Result(Rank.FIRST)));
 
 	public void showAllTickets() {
-		allTickets.stream().forEach(System.out::println);
+		OutputView.showAllTickets(allTickets);
 	}
 
-	public void inputWinningNumAndBonusBall() {
-		winningTicket = StringUtil.makeTicket(InputView.inputWinningNum());
-		bonusBall = InputView.inputBonusBall();
-		validate(winningTicket, bonusBall);
+	public void determineWinningTicketAndBonusBall() {
+		ArrayList<String> inputWinningTicket = StringUtil.splitUsingComma(InputView.inputWinningNum());
+		String inputBonusBall = InputView.inputBonusBall();
+		validate(inputWinningTicket, inputBonusBall);
 	}
 
-	private void validate(ArrayList<String> winningTicket, String bonusBall) {
-		makeLottoTicketByManual(winningTicket);
-		LottoBall.of(Integer.parseInt(bonusBall));
-		for (String number : winningTicket) {
-			if (number.equals(bonusBall)) {
-				throw new IllegalArgumentException("보너스 볼은 당첨 숫자와 다른 숫자여야 합니다.");
-			}
+	private void validate(ArrayList<String> inputWinningTicket, String inputBonusBall) {
+		winningTicket = validateWinningTicket(inputWinningTicket);
+		bonusBall = validateBonusBall(inputBonusBall);
+		validateNoBonusBallInWinningNumber(winningTicket, bonusBall);
+	}
+
+	private ArrayList<Integer> validateWinningTicket(ArrayList<String> inputWinningTicket) {
+		ArrayList<Integer> winningNumber = new ArrayList<>();
+		makeLottoTicketByManual(inputWinningTicket);
+		inputWinningTicket.stream().forEach(x -> winningNumber.add(Integer.parseInt(x)));
+		return winningNumber;
+	}
+
+	private int validateBonusBall(String inputBonusBall) {
+		int bonusBall = Integer.parseInt(inputBonusBall);
+		LottoBall.of(bonusBall);
+		return bonusBall;
+	}
+
+	private void validateNoBonusBallInWinningNumber(ArrayList<Integer> winningTicket, int bonusBall) {
+		if (winningTicket.stream().filter(eachDigit -> eachDigit == bonusBall).findAny().isPresent()) {
+			throw new IllegalArgumentException("보너스 볼은 당첨 숫자와 다른 숫자여야 합니다.");
 		}
 	}
 
@@ -45,23 +59,17 @@ public class LottoMachine {
 		}
 	}
 
-	public void getResult() {
+	public int getResult() {
 		OutputView.getBeforeResult();
-		ArrayList<Integer> winningNumber = new ArrayList<>();
-		winningTicket.stream().forEach(x -> winningNumber.add(Integer.parseInt(x)));
+		countRanksCnt();
+		return OutputView.getResult(results);
+	}
 
+	private void countRanksCnt() {
 		for (LottoTicket purchasedTicket : allTickets) {
-			int match = purchasedTicket.matchNumberCnt(winningNumber);
-			boolean hasBonusBall = purchasedTicket.isMatchBonusBall(Integer.parseInt(bonusBall));
-			Rank rank = Rank.valueOf(match, hasBonusBall);
-			results.get(results.indexOf(new Result(rank))).addCountThisRank();
+			int matchingCnt = purchasedTicket.compare(winningTicket);
+			boolean hasBonusBall = purchasedTicket.isMatchBonusBall(bonusBall);
+			results.get(results.indexOf(new Result(Rank.valueOf(matchingCnt, hasBonusBall)))).addCountThisRank();
 		}
-		results.stream()
-			.filter(x -> !x.getRank().equals(Rank.LOSE))
-			.forEach(x -> System.out.println(x.getRank().getMatch() + "개 일치 ("+x.getRank().getPrize()+")- " + x.getCountThisRank()+" 개"));
-		for (Result result : results) {
-			answer += result.getRank().getPrize() * result.getCountThisRank();
-		}
-		System.out.println(String.format("총 수익률은 %.2f%%입니다.", (double)answer/(allTickets.size()*LOTTO_TICKET_COST)));
 	}
 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="PlayerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-12-05T05:07:28" hostname="gimtaehun-ui-MacBookPro.local" time="0.081">
+  <properties/>
+  <testcase name="입력금액이_로또_1장_30장_사이일때_true(String)[1]" classname="PlayerTest" time="0.069"/>
+  <testcase name="입력금액이_로또_1장_30장_사이일때_true(String)[2]" classname="PlayerTest" time="0.002"/>
+  <testcase name="입력금액이_로또_1장_30장_사이일때_true(String)[3]" classname="PlayerTest" time="0.001"/>
+  <testcase name="입력금액이_로또_1장_30장_사이일때_true(String)[4]" classname="PlayerTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

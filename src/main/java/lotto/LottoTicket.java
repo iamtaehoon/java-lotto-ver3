@@ -56,4 +56,17 @@ public class LottoTicket{
 		}
 	}
 
+	@Override
+	public String toString() {
+		StringBuffer sb = new StringBuffer("[");
+		for (LottoBall lottoBall : lottoTicket) {
+			sb.append(lottoBall.getBallNum());
+			if (lottoBall != lottoTicket.last()) {
+				sb.append(", ");
+			}
+		}
+		sb.append("]");
+		return sb.toString();
+
+	}
 }

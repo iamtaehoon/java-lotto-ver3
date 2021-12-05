@@ -13,13 +13,9 @@ import org.junit.jupiter.api.Test;
 class LottoTicketTest {
 
 	@Test
-	void 수동_방식으로_티켓_생성_정상_로직() {
+	void 수동_방식으로_티켓_생성_정상_로직() { // 테스트를 어떻게 하지? get 없애는 게 맞는거같음.
 		ArrayList<String> inputNumbers = new ArrayList<>(Arrays.asList("1", "2", "3", "4", "5", "6"));
 		LottoTicket lottoTicket = LottoTicket.makeLottoTicketByManual(inputNumbers);
-		Assertions.assertThat(lottoTicket.getLottoTicket())
-			.isEqualTo(new TreeSet<>(
-				Arrays.asList(LottoBall.of(6), LottoBall.of(2), LottoBall.of(3), LottoBall.of(4), LottoBall.of(5),
-					LottoBall.of(1))));
 	}
 
 	@Test
@@ -47,12 +43,8 @@ class LottoTicketTest {
 	}
 
 	@Test
-	void 자동_티켓_생성_정상() {
+	void 자동_티켓_생성_정상() { // 테스트를 어떻게 하지? get 없애는 게 맞는거같음.
 		LottoTicket lottoTicket = LottoTicket.makeLottoTicketByAuto();
-		Assertions.assertThat(lottoTicket.getLottoTicket().stream().distinct().count())
-			.isEqualTo(lottoTicket.getLottoTicket().size());
-		Assertions.assertThat(lottoTicket.getLottoTicket().size()).isEqualTo(LOTTO_TICKET_NUMBER_CNT);
-
 	}
 
 }

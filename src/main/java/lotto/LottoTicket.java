@@ -55,4 +55,5 @@ public class LottoTicket{
 			throw new IllegalArgumentException("티켓에 6개의 숫자를 입력해주세요.");
 		}
 	}
+
 }

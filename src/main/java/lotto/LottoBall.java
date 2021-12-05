@@ -18,7 +18,7 @@ public class LottoBall implements Comparable{
 		return ballNum;
 	}
 
-	public int ballNum;
+	private int ballNum;
 
 	private LottoBall(int ballNum) {
 		this.ballNum = ballNum;

@@ -9,7 +9,7 @@ public class LottoBall {
 	private static Map<Integer, LottoBall> lottoBallCache = new HashMap<>();
 
 	static {
-		for (int ballNum = MIN_LOTTO_BALL; ballNum < MAX_LOTTO_BALL; ballNum++) {
+		for (int ballNum = MIN_LOTTO_BALL; ballNum < MAX_LOTTO_BALL + 1; ballNum++) {
 			lottoBallCache.put(ballNum, new LottoBall(ballNum));
 		}
 	}
@@ -20,7 +20,7 @@ public class LottoBall {
 		this.ballNum = ballNum;
 	}
 
-	public LottoBall of(int ballNum) {
+	public static LottoBall of(int ballNum) {
 		return lottoBallCache.get(ballNum);
 	}
 

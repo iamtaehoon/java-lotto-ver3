@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="lotto.LottoBallTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2021-12-05T06:19:56" hostname="gimtaehun-ui-MacBookPro.local" time="0.114">
+  <properties/>
+  <testcase name="로또공_생성_범위안(int)[1]" classname="lotto.LottoBallTest" time="0.039"/>
+  <testcase name="로또공_생성_범위안(int)[2]" classname="lotto.LottoBallTest" time="0.001"/>
+  <testcase name="로또공_생성_범위안(int)[3]" classname="lotto.LottoBallTest" time="0.001"/>
+  <testcase name="로또공_생성_범위안(int)[4]" classname="lotto.LottoBallTest" time="0.001"/>
+  <testcase name="로또공_생성_범위안(int)[5]" classname="lotto.LottoBallTest" time="0.002"/>
+  <testcase name="로또공_생성_범위안(int)[6]" classname="lotto.LottoBallTest" time="0.001"/>
+  <testcase name="로또공_생성_범위안(int)[7]" classname="lotto.LottoBallTest" time="0.001"/>
+  <testcase name="로또공_생성_범위밖_오류_발생(int)[1]" classname="lotto.LottoBallTest" time="0.039"/>
+  <testcase name="로또공_생성_범위밖_오류_발생(int)[2]" classname="lotto.LottoBallTest" time="0.001"/>
+  <testcase name="로또공_생성_범위밖_오류_발생(int)[3]" classname="lotto.LottoBallTest" time="0.001"/>
+  <testcase name="로또공_생성_범위밖_오류_발생(int)[4]" classname="lotto.LottoBallTest" time="0.001"/>
+  <testcase name="로또공_생성_범위밖_오류_발생(int)[5]" classname="lotto.LottoBallTest" time="0.0"/>
+  <testcase name="로또공_생성_범위밖_오류_발생(int)[6]" classname="lotto.LottoBallTest" time="0.001"/>
+  <testcase name="로또공_생성_범위밖_오류_발생(int)[7]" classname="lotto.LottoBallTest" time="0.001"/>
+  <system-out><![CDATA[lotto.LottoBall@6a58a99b
+lotto.LottoBall@1a7b1ece
+lotto.LottoBall@32238e40
+lotto.LottoBall@674f81ab
+lotto.LottoBall@479378ad
+lotto.LottoBall@5dc83ff
+lotto.LottoBall@2b235c8a
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

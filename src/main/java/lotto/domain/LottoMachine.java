@@ -3,7 +3,6 @@ package lotto.domain;
 import static lotto.domain.LottoTicket.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import lotto.StringUtil;
 import lotto.view.InputView;
@@ -13,9 +12,8 @@ public class LottoMachine {
 	private ArrayList<LottoTicket> allTickets;
 	private ArrayList<Integer> winningTicket;
 	private int bonusBall;
-	private ArrayList<Result> results = new ArrayList<>(
-		Arrays.asList(new Result(Rank.LOSE), new Result(Rank.FIFTH), new Result(Rank.FOURTH), new Result(Rank.THIRD),
-			new Result(Rank.SECOND), new Result(Rank.FIRST)));
+	// private LinkedHashMap<Rank, Integer> results = new LinkedHashMap<>();
+	private Result results = new Result();
 
 	public void showAllTickets() {
 		OutputView.showAllTickets(allTickets);
@@ -65,14 +63,15 @@ public class LottoMachine {
 	public int getResult() {
 		OutputView.getBeforeResult();
 		countRanksCnt();
-		return OutputView.getResult(results);
+		return OutputView.getResult(results.getResults());
 	}
 
 	private void countRanksCnt() {
 		for (LottoTicket purchasedTicket : allTickets) {
 			int matchingCnt = purchasedTicket.compare(winningTicket);
 			boolean hasBonusBall = purchasedTicket.isMatchBonusBall(bonusBall);
-			results.get(results.indexOf(new Result(Rank.valueOf(matchingCnt, hasBonusBall)))).addCountThisRank();
+			Rank thisTicketRank = Rank.valueOf(matchingCnt, hasBonusBall);
+			results.addResult(thisTicketRank);
 		}
 	}
 }

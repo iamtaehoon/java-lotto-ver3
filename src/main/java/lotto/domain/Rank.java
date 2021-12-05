@@ -35,5 +35,4 @@ public enum Rank {
 			.findFirst()
 			.orElse(LOSE);
 	}
-
 }

@@ -2,12 +2,14 @@ package lotto.view;
 
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 import lotto.domain.LottoTicket;
 import lotto.domain.Rank;
 import lotto.domain.Result;
 
 public class OutputView {
+	static int totalPrizeMoney = 0;
 
 	public static void getBeforeResult() {
 		System.out.println("당첨 통계\n---------");
@@ -17,14 +19,12 @@ public class OutputView {
 		allTickets.stream().forEach(System.out::println);
 	}
 
-	public static int getResult(ArrayList<Result> results) {
-		int totalPrizeMoney = 0;
-		results.stream()
-			.filter(x -> !x.getRank().equals(Rank.LOSE))
-			.forEach(x -> System.out.println(x.getRank().getMatch() + "개 일치 ("+x.getRank().getPrize()+")- " + x.getCountThisRank()+" 개"));
-		for (Result result : results) {
-			totalPrizeMoney += result.getRank().getPrize() * result.getCountThisRank();
-		}
+	public static int getResult(LinkedHashMap<Rank, Integer> results) {
+		results.remove(Rank.LOSE);
+		results.forEach((rank,count) -> {
+			System.out.println(rank.getMatch() + "개 일치 (" + rank.getPrize() + ")- " + count + " 개");
+			totalPrizeMoney += rank.getPrize() * count;
+		});
 		return totalPrizeMoney;
 	}
 

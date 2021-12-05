@@ -1,43 +1,25 @@
 package lotto.domain;
 
+import java.util.LinkedHashMap;
+
 public class Result {
-	Rank rank;
-	int countThisRank;
+	private LinkedHashMap<Rank, Integer> results = new LinkedHashMap<>();
 
-	public Result(Rank rank) {
-		this.rank = rank;
-		this.countThisRank = 0;
-	}
-	public void addCountThisRank() {
-		this.countThisRank += 1;
-	}
-
-	public Rank getRank() {
-		return rank;
+	public Result() {
+		results.put(Rank.LOSE, 0);
+		results.put(Rank.FIFTH, 0);
+		results.put(Rank.FOURTH, 0);
+		results.put(Rank.THIRD, 0);
+		results.put(Rank.SECOND, 0);
+		results.put(Rank.FIRST, 0);
 	}
 
-	public int getCountThisRank() {
-		return countThisRank;
+	public void addResult(Rank thisTicketRank) {
+		results.put(thisTicketRank, results.get(thisTicketRank) + 1);
 	}
 
-	@Override
-	public String toString() {
-		return "Result{" +
-			"rank=" + rank +
-			", countThisRank=" + countThisRank +
-			'}';
+	public LinkedHashMap<Rank, Integer> getResults() {
+		return results;
 	}
-
-
-	@Override
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (o == null || getClass() != o.getClass())
-			return false;
-		Result result = (Result)o;
-		return rank == result.rank;
-	}
-
 }
 
